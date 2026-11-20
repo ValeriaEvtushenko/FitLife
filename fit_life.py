@@ -16,22 +16,16 @@ ML_PER_L = 1000
 
 def calculate_bmi(weight, height):
     """Функция расчёта индекса массы тела"""
-    # расчёт индекса массы тела
     bmi = weight / (height ** 2)
-    # округление значения bmi для лучшей читаемости
-    bmi_rounded = round(bmi, 1)
-    return bmi_rounded
+    return round(bmi, 1)
 
 
 def calculate_water(weight):
     """Функция  расчёта нормы воды"""
-    # расчёт нормы воды
     water_ml = weight * WATER_PER_KG
     # перевод water_ml в литры
     water_l = water_ml / ML_PER_L
-    # округление значения water_l для лучшей читаемости
-    water_l_rounded = round(water_l, 1)
-    return water_l_rounded
+    return round(water_l, 1)
 
 
 # 1. Знакомство
