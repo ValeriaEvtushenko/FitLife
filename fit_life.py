@@ -16,16 +16,14 @@ ML_PER_L = 1000
 
 def calculate_bmi(weight, height):
     """Функция расчёта индекса массы тела"""
-    bmi = weight / (height ** 2)
-    return round(bmi, 1)
+    return weight / (height ** 2)
 
 
 def calculate_water(weight):
     """Функция  расчёта нормы воды"""
     water_ml = weight * WATER_PER_KG
-    # перевод water_ml в литры
-    water_l = water_ml / ML_PER_L
-    return round(water_l, 1)
+    # возвращение water_ml в литрах
+    return water_ml / ML_PER_L
 
 
 # 1. Знакомство
@@ -40,7 +38,7 @@ print(f'\nПриятно познакомиться, {user_name}!')
 # 2. Сбор данных
 print('Давай введем о тебе некоторые данные.')
 
-user_weight = float(input('Введи свой вес в килограммах: '))
+user_weight = float(input('Введи свой вес в килограммах (например, 65): '))
 user_height = float(input('Введи свой рост в метрах (например, 1.75): '))
 
 # 3. Расчеты
@@ -52,7 +50,7 @@ water_needed = calculate_water(user_weight)
 # 4. Вывод красивого результата
 print('\n' + '-' * 60)
 print(f'\nОтчет для пользователя: {user_name} ({user_age} г.)')
-print(f'Твой Индекс Массы Тела: {bmi}')
-print(f'Рекомендуемая норма воды: {water_needed} л. в день')
+print(f'Твой Индекс Массы Тела: {bmi:.1f}')
+print(f'Рекомендуемая норма воды: {water_needed:.1f} л. в день')
 print('\nРасчет окончен. Будьте здоровы!')
 print('\n' + '-' * 60 + '\n')
